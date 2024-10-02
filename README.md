@@ -22,7 +22,7 @@ Certifique-se de ter o seguinte instalado em seu computador:
 2. Navegue até o diretório do projeto:
    - `cd todolist/`
 
-3. Mude para o branch correto:
+3. Mude para a branch correta:
    - `git checkout alberto`
 
 4. Instale as dependências:
@@ -34,11 +34,11 @@ Certifique-se de ter o seguinte instalado em seu computador:
 Para iniciar a aplicação, use o comando:
 - `npx expo start`
 
-Isso iniciará o servidor de desenvolvimento do Expo e abrirá uma nova aba no seu navegador padrão.
+Isso iniciará o servidor de desenvolvimento do Expo.
 
 ### Acessando a Aplicação
 
-- Você pode usar o aplicativo Expo Go em seu dispositivo móvel para escanear o código QR exibido no terminal ou no navegador.
+- Você pode usar o aplicativo Expo Go em seu dispositivo móvel para escanear o código QR exibido no terminal.
 - Alternativamente, você pode executar o aplicativo em um simulador Android ou iOS, se tiver um configurado.
 
 ### Contribuindo
