@@ -1,47 +1,65 @@
-import React, { useState } from 'react';
-import { View } from 'react-native';
-import { Container, TaskText, TaskDone, TaskDelete } from './styles';
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-interface TaskProps {
+interface TodoItemProps {
+  todo: {
+    id: string;
     text: string;
-    completeTask: () => void;
+    completed: boolean;
+  };
+  onToggle: () => void;
+  onDelete: () => void;
 }
 
-const Task: React.FC<TaskProps> = ({ text, completeTask }) => {
-    const [isCompleted, setIsCompleted] = useState(false);
-    const toggleCompletion = () => {
-        setIsCompleted(!isCompleted);
-    };
-
-    return (
-        <View>
-            <Container>
-                <TaskDone onPress={toggleCompletion}>
-                    <Feather
-                        name={isCompleted ? 'check-square' : 'square'}
-                        size={24}
-                        color="black"
-                    />
-                </TaskDone>
-                <TaskText
-                    style={
-                        isCompleted
-                            ? {
-                                  textDecorationLine: 'line-through',
-                                  color: '#A9A9A9',
-                              }
-                            : {}
-                    }
-                >
-                    {text}
-                </TaskText>
-                <TaskDelete onPress={completeTask}>
-                    <Feather name="trash-2" size={24} color="#E36565" />
-                </TaskDelete>
-            </Container>
-        </View>
-    );
+const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggle, onDelete }) => {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={onToggle} style={styles.todoText}>
+        <Feather
+          name={todo.completed ? 'check-square' : 'square'}
+          size={24}
+          color="black"
+          style={styles.checkIcon}
+        />
+        <Text style={[styles.text, todo.completed && styles.completedText]}>
+          {todo.text}
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={onDelete} style={styles.deleteButton}>
+        <Feather name="trash-2" size={24} color="#E36565" />
+      </TouchableOpacity>
+    </View>
+  );
 };
 
-export default Task;
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 8,
+    marginBottom: 10,
+    padding: 15,
+  },
+  todoText: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  checkIcon: {
+    marginRight: 10,
+  },
+  text: {
+    fontSize: 16,
+  },
+  completedText: {
+    textDecorationLine: 'line-through',
+    color: '#888',
+  },
+  deleteButton: {
+    padding: 5,
+  },
+});
+
+export default TodoItem;
