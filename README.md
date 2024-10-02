@@ -1,6 +1,6 @@
 # Aplicação de Lista de Tarefas
 
-Bem-vindo à Aplicação de Lista de Tarefas! Este projeto permite que os usuários gerenciem suas tarefas de forma eficiente.
+Este projeto permite que os usuários gerenciem suas tarefas de forma eficiente.
 
 ## Começando
 
