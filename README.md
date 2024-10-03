@@ -27,7 +27,7 @@ Certifique-se de ter o seguinte instalado em seu computador:
 
 4. Instale as dependências:
    - Para evitar conflitos de dependência, use o comando:
-     - `npm install --legacy-peer-deps`
+     - `npm install`
 
 ### Executando a Aplicação
 
