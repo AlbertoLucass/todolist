@@ -40,6 +40,7 @@ Isso iniciará o servidor de desenvolvimento do Expo.
 
 - Você pode usar o aplicativo Expo Go em seu dispositivo móvel para escanear o código QR exibido no terminal.
 - Alternativamente, você pode executar o aplicativo em um simulador Android ou iOS, se tiver um configurado.
+- O usuário é user e a senha é password.
 
 ### Contribuindo
 
